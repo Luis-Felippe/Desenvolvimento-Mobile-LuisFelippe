@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_Materiais"
+        android:title="Materiais"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_Video"
+        android:title="Video Aulas"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_ajuda"
+        android:title="ajuda"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_Sobre"
+        android:title="Sobre"
+        android:orderInCategory="102"
+        app:showAsAction="never"
+        />
+
+
+</menu>
