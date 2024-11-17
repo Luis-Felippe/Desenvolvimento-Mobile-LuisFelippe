@@ -30,5 +30,12 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/action_Help"
+        android:title="Help"
+        android:orderInCategory="103"
+        app:showAsAction="never"
+
+        />
 
 </menu>

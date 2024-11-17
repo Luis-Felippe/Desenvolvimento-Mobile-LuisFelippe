@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.menu3pontinhos"
+    namespace = "com.example.profileapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.menu3pontinhos"
+        applicationId = "com.example.profileapp"
         minSdk = 33
         targetSdk = 34
         versionCode = 1
