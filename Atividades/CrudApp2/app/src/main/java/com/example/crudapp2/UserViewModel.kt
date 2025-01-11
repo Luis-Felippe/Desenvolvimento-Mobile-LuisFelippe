@@ -5,47 +5,45 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository = UserRepository
+    private val repository: UserRepository
 
     private val _users = MutableLiveData<List<User>>()
     val users: LiveData<List<User>> get() = _users
 
-    init{
+    init {
         val userDAO = AppDatabase.getDatabase(application).userDAO()
-        repository = UserRepository(userDAO)
+        repository = UserRepository(userDAO) // Aqui você cria a instância corretamente
         observerUsers()
     }
 
-    private fun observerUsers(){
+    private fun observerUsers() {
         viewModelScope.launch {
-            repository.launch{
-                repository.getAllUsers().collectLatest { userList ->
-                    _users.value = userList
-                }
+            repository.getAllUsers().collectLatest { userList ->
+                _users.value = userList
             }
         }
     }
 
-    fun addUser(user: User){
+    fun addUser(user: User) {
         viewModelScope.launch {
             repository.insertUser(user)
         }
     }
 
-    fun updateUser(user: User){
+    fun updateUser(user: User) {
         viewModelScope.launch {
             repository.updateUser(user)
         }
     }
 
-    fun deleteUser(user: User){
+    fun deleteUser(user: User) {
         viewModelScope.launch {
             repository.deleteUser(user)
         }
     }
-
 }

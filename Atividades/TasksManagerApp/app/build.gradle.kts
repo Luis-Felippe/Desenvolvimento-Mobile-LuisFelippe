@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.crudapp2"
+    namespace = "com.example.tasksmanagerapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.crudapp2"
+        applicationId = "com.example.tasksmanagerapp"
         minSdk = 33
         targetSdk = 34
         versionCode = 1
@@ -49,9 +49,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.room.common)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,4 +56,14 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("androidx.compose.material3:material3:1.1.2")
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
+    implementation ("androidx.compose.ui:ui:1.5.4")
+    implementation ("androidx.compose.ui:ui-tooling-preview:1.5.4")
+    implementation ("androidx.compose.material3:material3:1.1.2")
+    implementation ("androidx.activity:activity-compose:1.7.2")
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation ("androidx.compose.animation:animation:1.5.4")
+    debugImplementation ("androidx.compose.ui:ui-tooling:1.5.4")
 }
